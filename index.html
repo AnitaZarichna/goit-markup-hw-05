@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Web Studio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -16,7 +16,9 @@
         <nav class="site-nav">
           <a href="" class="header-logo"><span class="header-logo-web">Web</span>Studio</a>
           <ul class="header-list list">
-            <li class="header-nav-li"><a href="" class="header-link current">Студия</a></li>
+            <li class="header-nav-li">
+              <div class="header-current"><a href="" class="header-link current">Студия</a></div>
+            </li>
             <li class="header-nav-li"><a href="./portfolio.html" class="header-link">Портфолио</a></li>
             <li class="header-nav-li"><a href="" class="header-link">Контакты</a></li>
           </ul>
@@ -74,12 +76,23 @@
           <h2 class="works-title">Чем мы занимаемся</h2>
           <ul class="works-list list">
             <li class="works-img">
-              <img src="./img/box1.jpg" alt="Програмирование" width="370" />
+              <div class="works-text">
+                <img src="./img/box1.jpg" alt="Програмирование" width="370" />
+                <p class="works-text-p">Десктопные приложения</p>
+              </div>
             </li>
             <li class="works-img">
-              <img src="./img/box2.jpg" alt="Разработка приложенний" width="370" />
+              <div class="works-text">
+                <img src="./img/box2.jpg" alt="Разработка приложенний" width="370" />
+                <p class="works-text-p">Мобильные приложения</p>
+              </div>
             </li>
-            <li class="works-img"><img src="./img/box3.jpg" alt="Графика" width="370" /></li>
+            <li class="works-img">
+              <div class="works-text">
+                <img src="./img/box3.jpg" alt="Графика" width="370" />
+                <p class="works-text-p">Дизайнерские решения</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -293,5 +306,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

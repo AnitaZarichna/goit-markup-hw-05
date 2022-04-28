@@ -21,6 +21,8 @@ html {
   --main-letter-spacing: 0.03em;
   --card-background: #ffffff;
   --social-link: #afb1b8;
+  --animation: cubic-bezier(0.4, 0, 0.2, 1);
+  --card-background-hover: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -115,9 +117,10 @@ a {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--animation);
 }
 .header-list .header-nav-li:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 50px;
 }
 .header-link:hover,
 .header-link:focus {
@@ -126,6 +129,21 @@ a {
 
 .header-link.current {
   color: var(--accent-color);
+}
+.header-current {
+  display: block;
+  position: relative;
+}
+.header-current::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 /* Контакты */
 .header-adress {
@@ -141,6 +159,7 @@ a {
   color: var(--primary-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--animation);
 }
 .header-adress .header-li:not(:last-child) {
   margin-right: 30px;
@@ -202,6 +221,7 @@ a {
   border-radius: 4px;
   border: none;
   padding: 10px 32px;
+  transition: background-color 250ms var(--animation), filter var(--animation);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -286,6 +306,26 @@ a {
 .works-img:not(:last-child) {
   margin-right: 30px;
 }
+.works-text {
+  display: block;
+  position: relative;
+}
+.works-text-p {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--p-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  transform: translateY(-100%);
+}
 /* Наша команда */
 .team {
   background-color: var(--section-background);
@@ -358,6 +398,7 @@ a {
   justify-content: center;
   color: var(--social-link);
   fill: currentColor;
+  transition: background-color 250ms var(--animation), color 250ms var(--animation), border-radius 250ms var(--animation);
 }
 .social-link:hover,
 .social-link:focus {
@@ -398,6 +439,7 @@ a {
   border-radius: 4px;
   color: var(--social-link);
   fill: currentColor;
+  transition: color 250ms var(--animation), border 250ms var(--animation);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -428,6 +470,7 @@ a {
   padding: 6px 22px;
   border-color: transparent;
   border-radius: 4px;
+  transition: box-shadow 250ms var(--animation), background-color 250ms var(--animation), color 250ms var(--animation);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
@@ -456,6 +499,7 @@ a {
 
 .portfolio-list {
   display: block;
+  position: relative;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -463,10 +507,37 @@ a {
   color: var(--title-text-color);
   text-decoration: none;
   background-color: var(--card-background);
+
+  background-size: contain;
+  transition: box-shadow 250ms var(--animation);
 }
 .portfolio-list:hover,
 .portfolio-list:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.card-hover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-text {
+  position: absolute;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--p-text-color);
+  background-color: var(--card-background-hover);
+  bottom: 0;
+  left: 0;
+  padding: 63px 24px;
+  transform: translateY(101%);
+  transition: transform 250ms var(--animation);
+}
+.portfolio-list:hover .card-hover-text,
+.portfolio-list:focus .card-hover-text {
+  transform: translateY(0);
 }
 .card-text {
   padding: 24px 20px;
@@ -525,6 +596,7 @@ a {
   font-style: normal;
   line-height: 1.71;
   color: var(--footer-link);
+  transition: color 250ms var(--animation);
 }
 .footer-link:hover,
 .footer-link:focus {
@@ -560,6 +632,7 @@ a {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms var(--animation);
 }
 .footer-social-icon:hover,
 .footer-social-icon:focus {
