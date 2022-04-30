@@ -235,6 +235,7 @@ a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms var(--animation), visibility 500ms var(--animation);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -444,13 +445,13 @@ a {
   justify-content: center;
   color: var(--social-link);
   fill: currentColor;
-  transition: background-color 250ms var(--animation), color 250ms var(--animation), border-radius 250ms var(--animation);
+  border-radius: 50px;
+  transition: background-color 250ms var(--animation), color 250ms var(--animation);
 }
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
   color: var(--btn-text-color);
-  border-radius: 50px;
 }
 /* Постоянные клиенты */
 .clients {
